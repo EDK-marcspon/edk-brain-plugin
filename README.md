@@ -16,13 +16,13 @@ EDK(ESG 플랫폼) 팀의 위키를 각자의 Claude 에서 쓰게 해 주는 �
 터미널에서 한 줄:
 
 ```
-claude plugin install edk-brain@edk --marketplace https://raw.githubusercontent.com/EDK-marcspon/edk-brain-plugin/main/.claude-plugin/marketplace.json
+claude plugin install edk-brain --marketplace https://raw.githubusercontent.com/EDK-marcspon/edk-brain-plugin/main/.claude-plugin/marketplace.json
 ```
 
 Claude Code 세션 안에서는:
 
 ```
-/plugin install edk-brain@edk --marketplace https://raw.githubusercontent.com/EDK-marcspon/edk-brain-plugin/main/.claude-plugin/marketplace.json
+/plugin install edk-brain --marketplace https://raw.githubusercontent.com/EDK-marcspon/edk-brain-plugin/main/.claude-plugin/marketplace.json
 ```
 
 설치한 뒤 세션을 새로 연다.

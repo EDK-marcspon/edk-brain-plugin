@@ -13,7 +13,24 @@ EDK(ESG 플랫폼) 팀의 위키를 각자의 Claude 에서 쓰게 해 주는 �
 
 ## 설치
 
-터미널에서 한 줄:
+쓰는 환경에 맞는 방법 하나를 고른다. 어느 방법이든 같은 플러그인이다.
+
+### 회사 Claude 조직에 속한 사람 — 데스크톱 앱에서 검색
+
+Claude 데스크톱 앱의 Code 탭에서 입력란 옆 **＋** → **Add plugins**(또는 Plugins → Browse plugins)를 열고 `edk-brain` 을 찾아 설치한다.
+회사 조직 라이브러리에 올라가 있어서 조직 계정으로 로그인한 사람에게만 보인다.
+
+### 그 밖의 사람 — 명령 한 줄
+
+데스크톱 앱의 검색에는 나오지 않는다(공식 목록이나 조직 라이브러리에 있는 것만 검색된다). 아래 명령으로 설치한다. git 이나 GitHub 계정은 필요 없다.
+
+**윈도우에 데스크톱 앱만 있는 경우** — PowerShell 에 통째로 붙여 넣는다(앱 안에 든 Claude Code 실행 파일을 찾아 쓴다):
+
+```
+$c = Get-ChildItem "$env:LOCALAPPDATA\Claude-Data\*\claude-code\*\*\claude.exe","$env:APPDATA\Claude\claude-code\*\claude.exe","$env:LOCALAPPDATA\Claude\claude-code\*\claude.exe" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1; & $c.FullName plugin install edk-brain --marketplace https://raw.githubusercontent.com/EDK-marcspon/edk-brain-plugin/main/.claude-plugin/marketplace.json
+```
+
+**터미널용 Claude Code 가 있는 경우**(윈도우·맥):
 
 ```
 claude plugin install edk-brain --marketplace https://raw.githubusercontent.com/EDK-marcspon/edk-brain-plugin/main/.claude-plugin/marketplace.json
@@ -83,4 +100,8 @@ claude plugin update edk-brain@edk
 - `plugin/` — 플러그인 원본
 - `dist/edk-brain-<버전>.zip` — 배포 파일. `plugin/` 을 압축한 것
 - `.claude-plugin/marketplace.json` — 배포 목록. 배포 파일의 주소와 sha256 을 적는다
-- 새 버전을 낼 때: `plugin/.claude-plugin/plugin.json` 의 `version` 을 올리고, 새 zip 을 `dist/` 에 추가하고, `marketplace.json` 의 `url`·`sha256` 을 새 파일로 바꾼다. 버전을 올리지 않으면 사용자에게 전달되지 않는다
+- **배포하는 곳이 두 군데다.** 이 저장소(누구나, 명령으로 설치)와 회사 Claude 조직 라이브러리(조직에 속한 사람, 데스크톱 앱에서 검색해 설치). 내용은 같은 `plugin/` 폴더다
+- 새 버전을 낼 때는 **두 곳 모두** 갱신한다. 한쪽만 올리면 다른 쪽에 옛 버전이 남는다
+  1. `plugin/.claude-plugin/plugin.json` 의 `version` 을 올린다. 버전을 올리지 않으면 사용자에게 전달되지 않는다
+  2. 새 zip 을 `dist/` 에 추가하고, `marketplace.json` 의 `url`·`sha256` 을 새 파일로 바꿔 이 저장소에 올린다
+  3. 같은 `plugin/` 폴더를 조직 라이브러리에 다시 게시한다(같은 이름의 게시본을 새 버전으로 바꾼다). 조직 라이브러리의 게시본은 claude.ai 관리자 설정 → 플러그인 및 Skills → 인벤토리에서 확인·삭제한다

@@ -1,7 +1,7 @@
 {
   "name": "edk",
   "owner": { "name": "EDK 개발팀" },
-  "description": "EDK 위키 플러그인. 누구나 설치할 수 있고, 쓰려면 회사 계정 로그인이 필요하다",
+  "description": "EDK 위키 플러그인. 저장소를 공개로 돌렸을 때만 쓰는 목록 파일이다. 평소 배포는 회사 Claude 조직 라이브러리",
   "plugins": [
     {
       "name": "edk-brain",

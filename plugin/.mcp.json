@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "edk-wiki": {
+      "type": "http",
+      "url": "https://edk-wiki.tail124970.ts.net/mcp",
+      "headersHelper": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/edk-auth.mjs\" header"
+    }
+  }
+}

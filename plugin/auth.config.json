@@ -1,0 +1,7 @@
+{
+  "_설명": "M365 관리자가 Entra 앱을 등록한 뒤 채운다. 비밀값이 아니다(테넌트·앱 ID). server/edk-wiki-mcp/README.md 참고",
+  "tenantId": "3dd8e369-3fb1-41ca-8c2b-e016c88ab9d9",
+  "clientId": "5d0e95cb-db2a-4b87-873f-c68a136d9424",
+  "scope": "api://5d0e95cb-db2a-4b87-873f-c68a136d9424/wiki.read",
+  "callbackPort": 53682
+}

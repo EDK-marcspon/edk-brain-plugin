@@ -1,0 +1,16 @@
+{
+  "name": "edk",
+  "owner": { "name": "EDK 개발팀" },
+  "description": "EDK 위키 플러그인. 누구나 설치할 수 있고, 쓰려면 회사 계정 로그인이 필요하다",
+  "plugins": [
+    {
+      "name": "edk-brain",
+      "description": "EDK 위키를 각자의 Claude 에서 쓰게 해 준다: 위키 질문 답변, V3 테마 화면 시안. 회사 계정 로그인 필요",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/EDK-marcspon/edk-brain-plugin/main/dist/edk-brain-1.0.0.zip",
+        "sha256": "ed6e8e8c23ac5e003432cbe7810aba1e60d0a9769c9278733956c86f545a99bf"
+      }
+    }
+  ]
+}
